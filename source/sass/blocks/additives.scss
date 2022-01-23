@@ -1,0 +1,35 @@
+.additives {
+  padding-top: 23px;
+  padding-bottom: 37px;
+
+  @media (--not-narrow-vp) {
+    padding-bottom: 67px;
+  }
+
+  @media (--wide-vp) {
+    grid-column: 1 / 4;
+    padding-bottom: 67px;
+  }
+}
+
+.additives__title {
+  width: max-content;
+  padding-right: 20px;
+  margin: 0 0 34px 0;
+  font-weight: 400;
+  background-color: var(--color__white);
+
+  @include line-height(24,24,36,36);
+  @include font-size(24,36);
+
+  @media (--not-narrow-vp) {
+    padding-left: 20px;
+    margin: 0 0 80px 0;
+  }
+
+  @media (--wide-vp) {
+    position: relative;
+    left: -30px;
+    padding-left: 30px;
+  }
+}

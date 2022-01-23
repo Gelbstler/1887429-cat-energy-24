@@ -1,0 +1,60 @@
+.academy {
+  @media (--not-narrow-vp) {
+    display: grid;
+    justify-content: end;
+  }
+}
+
+.academy-logo {
+  grid-column: 3;
+  display: flex;
+  padding-top: 19px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+  text-decoration: none;
+  color: var(--color__dark-grey);
+  font-family: var(--main-font);
+  font-size: 16px;
+  line-height: 18.4px;
+  fill: #666666;
+  transition: 0.3s;
+
+  @media (--not-narrow-vp) {
+    justify-content: flex-end;
+    padding-top: 0;
+  }
+
+  &::after {
+    position: relative;
+    top: 1px;
+    left: 7px;
+    display: block;
+    width: 41px;
+    height: 35px;
+    padding-left: 16px;
+    box-sizing: border-box;
+    content: "";
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+    background: currentColor;
+    mask-image: url("../../icons/sprite.svg#htmlacademy");
+    transition: 0.3s;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color__outline);
+    outline-offset: 1px;
+    border-radius: 5px;
+  }
+
+  &:hover::after {
+    background: var(--color__green);
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,28 @@
+<header class="page__header page__centerer">
+  <div class="header">
+    <a class="logo" href="index.html" {% if permalink == "index.html" %}aria-current="page"{% endif %}>
+      <picture>
+        <source media="(min-width: 1280px)" srcset="./img/identics.svg#icon-l">
+        <source media="(min-width: 768px)" srcset="./img/identics.svg#icon-m">
+        <img class="logo__icon" src="./img/identics.svg#icon-s" width="34" height="39" alt="Иконка кэт-энерджи.">
+      </picture>
+      <svg class="logo__text">
+        <use xlink:href="./img/identics.svg#logotype"></use>
+      </svg>
+    </a>
+    <button class="menu-toggle menu-toggle--noJS" type="button">
+      <span class="page__hidden">Меню.</span>
+    </button>
+  </div>
+  <nav class="header-nav header-nav--noJS header-nav--closed {% if permalink == "index.html" %} header-nav--color_change {% endif %}">
+    <ul class="header-nav__list">
+      {% for page in pages %}
+        <li class="header-nav__item">
+          <a class="header-nav__link {% if permalink == page.path %} header-nav__link--current {% endif %} {% if permalink == "index.html" %} header-nav__link--changed_underline {% endif %}>{{ page.name }}" href="{{ page.path }}" {% if permalink == page.path %} aria-current="page" {% endif %}>{{ page.name }}</a>
+        </li>
+      {% else %}
+        <li>Из навигации пропали все пункты 😕</li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

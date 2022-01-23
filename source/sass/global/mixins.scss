@@ -1,0 +1,31 @@
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin link($link-color) {
+  text-decoration: none;
+  color: $link-color;
+}
+
+/*adaptive for mobile and other width*/
+@mixin font-size($mobile, $pc) {
+  @media (--narrow-vp) {
+    font-size: math.div($mobile, $font-default-size) + rem;
+  }
+
+  @media (--not-narrow-vp) {
+    font-size: math.div($pc, $font-default-size) + rem;
+  }
+}
+
+@mixin line-height($mobileFont, $mobileLh, $pcFont, $pcLh) {
+  @media (--narrow-vp) {
+    line-height: calc(#{$mobileLh} / #{$mobileFont});
+  }
+
+  @media (--not-narrow-vp) {
+    line-height: calc(#{$pcLh} / #{$pcFont});
+  }
+}

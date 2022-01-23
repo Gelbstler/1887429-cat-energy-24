@@ -1,0 +1,40 @@
+.footer-logo {
+  display: grid;
+  grid-column: 1;
+  justify-content: center;
+  box-sizing: border-box;
+  row-gap: 10px;
+  transition: 0.3s;
+
+  @media (--narrow-vp) {
+    padding-bottom: 26px;
+  }
+
+  @media (--not-narrow-vp) {
+    justify-content: start;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.footer-logo__link {
+  @media (--middle-vp) {
+    padding-top: 7px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color__outline);
+    outline-offset: 1px;
+    border-radius: 5px;
+  }
+
+  .footer-logo__image {
+    object-fit: cover;
+  }
+}
