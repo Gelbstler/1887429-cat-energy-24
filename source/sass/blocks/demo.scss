@@ -1,0 +1,25 @@
+.demo {
+  background-color: var(--color__grey);
+  width: 100%;
+  padding-bottom: 29px;
+
+  @media (--middle-vp) {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 15px;
+    padding-bottom: 60px;
+    background-image:
+      linear-gradient(
+        #ffffff 618px,
+        transparent 618px
+      );
+  }
+
+  @media (--wide-vp) {
+    background-image:
+      linear-gradient(
+        #ffffff 140px,
+        transparent 140px
+      );
+    padding-bottom: 35px;
+  }
+}
