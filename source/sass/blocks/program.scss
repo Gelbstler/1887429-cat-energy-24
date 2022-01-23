@@ -1,0 +1,227 @@
+.program {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: var(--color__grey);
+  min-height: 265px;
+
+  @media (--middle-vp) {
+    padding-right: 350px;
+    min-height: 372px;
+  }
+
+  @media (--wide-vp) {
+    width: 570px;
+    min-height: 372px;
+  }
+
+  &--slim {
+    padding: 27px 33px 12px 19px;
+
+    @media (--not-narrow-vp) {
+      padding: 77px 33px 45px 19px;
+    }
+  }
+
+  &--fat {
+    padding: 30px 33px 12px 19px;
+
+    @media (--not-narrow-vp) {
+      padding: 78px 30px 45px 19px;
+    }
+  }
+}
+
+.program__title {
+  position: relative;
+  display: flex;
+  padding: 0 5% 15px 72px;
+  box-sizing: border-box;
+
+  margin: 0;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 400;
+
+  @include font-size(24,36);
+  @include line-height(24,37,36,36);
+
+  @media (--middle-vp) {
+    padding-left: 34px;
+    padding-right: 35%;
+  }
+
+  @media (--wide-vp) {
+    padding-left: 195px;
+  }
+
+  &--slim {
+    &::after {
+      top: -16px;
+      left: -6px;
+      width: 70px;
+      height: 70px;
+      background-image: url("../../icons/sprite.svg#cat-slim");
+      background-size: auto;
+
+      @media (--middle-vp) {
+        top: -26px;
+        left: 60.3%;
+        width: 270px;
+        height: 270px;
+      }
+
+      @media (--wide-vp) {
+        top: -50px;
+        left: 4%;
+        width: 132px;
+        height: 143px;
+      }
+    }
+  }
+
+
+  &--fat {
+    &::after {
+      top: -16px;
+      left: -8px;
+      width: 70px;
+      height: 70px;
+      background-image: url("../../icons/sprite.svg#cat-pro");
+      background-size: auto;
+
+      @media (--middle-vp) {
+        top: -25px;
+        left: 59.7%;
+        width: 270px;
+        height: 270px;
+      }
+
+      @media (--wide-vp) {
+        top: -55px;
+        left: 2%;
+        width: 145px;
+        height: 140px;
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 3px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color__green);
+
+    @media (--middle-vp) {
+      width: 200px;
+      height: 200px;
+      top: 14px;
+      left: 65%;
+    }
+
+    @media (--wide-vp) {
+      width: 100px;
+      height: 100px;
+      top: -31px;
+      left: 33px;
+    }
+  }
+}
+
+.program__description {
+  padding: 15px 3px 23px 0;
+  margin: 0;
+  color: var(--color__dark-grey);
+  font-family: var(--main-font);
+
+  @include font-size(14,16);
+  @include line-height(14,18,16,24);
+
+  @media (--not-narrow-vp) {
+    padding: 9px 43% 40px 33px;
+    color: var(--color__black);
+  }
+
+  @media (--wide-vp) {
+    padding: 58px 20px 15px 33px;
+  }
+
+  &::after {
+    position: absolute;
+    top: 78%;
+    left: 0;
+    display: block;
+    width: 85%;
+    transform: translateX(20px);
+    height: 1px;
+    background-color: #d9d9d9;
+    content: "";
+
+    @media (--not-narrow-vp) {
+      display: none;
+    }
+  }
+}
+
+.program__link {
+  display: grid;
+  padding: 10px 5px 10px 0;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  margin-top: auto;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  transition: 0.3s;
+
+  @include font-size(16,20);
+  @include line-height(16,16,20,29.6);
+  @include link(var(--color__black));
+
+  &:focus-visible {
+    outline: 2px solid var(--color__outline);
+    outline-offset: 1px;
+  }
+
+  @media (--not-narrow-vp) {
+    padding: 10px 0 12px 33px;
+  }
+
+  &:hover::after {
+    mask-position: center;
+  }
+
+  &::after {
+    position: relative;
+    display: block;
+    margin-left: 16px;
+    width: 34px;
+    height: 10px;
+    mask-image: url("../../icons/sprite.svg#arrow");
+    mask-repeat: no-repeat;
+    mask-position: -10px center;
+    mask-size: cover;
+    background: currentColor;
+    content: "";
+    transition: 0.3s;
+
+    @media (--not-narrow-vp) {
+      margin-left: 25px;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

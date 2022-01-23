@@ -1,0 +1,55 @@
+.main-link {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color__green);
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  box-sizing: border-box;
+  padding: 11px 20px;
+  font-family: var(--accent-font);
+  font-weight: 400;
+  transition: 0.3s;
+  cursor: pointer;
+
+  @include font-size(16,20);
+  @include line-height(16,20,20,20);
+  @include link(white);
+
+  &:focus-visible {
+    outline: 2px solid var(--color__outline);
+    outline-offset: 1px;
+  }
+
+  &:hover {
+    background-color: #5eaa2f;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &--smaller-text {
+    @include font-size(14,20);
+    @include line-height(14,18,20,20);
+
+    @media (--not-narrow-vp) {
+      padding: 17px 5px;
+    }
+  }
+
+  &--discreet {
+    background-color: var(--color__grey);
+    color: var(--color__dark-grey);
+
+    &:hover {
+      background: #ebebeb;
+    }
+
+    &:active {
+      color: rgba(68, 68, 68, 0.3);
+    }
+  }
+}

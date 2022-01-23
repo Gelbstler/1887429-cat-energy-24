@@ -1,0 +1,53 @@
+<footer class="page__footer footer">
+
+    <section class="footer__contacts-wrapper">
+      <h2 class="page__hidden">Контакты</h2>
+      <div class="footer__contacts-container {% if permalink != "index.html" %} footer__contacts-container--color_change {% endif %}">
+          <div class="contacts page__centerer">
+            <b class="contacts__title">Приглашаем <br> к сотрудничеству дилеров!</b>
+            <p class="contacts__address">ул. Большая Конюшенная, д. 19/8
+              <span class="contacts__city">Санкт-Петербург</span>
+            </p>
+          </div>
+      </div>
+      <div class="footer__map">
+        <iframe title="ул. Большая Конюшенная, д. 19/8, Санкт-Петербург" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.603787253322!2d30.320858716146866!3d59.938716481876234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1639073287409!5m2!1sru!2sru" width="320" height="362" allowfullscreen="" loading="lazy"></iframe>
+        <noscript>
+          <picture>
+            <source media="(min-width: 1280px)" srcset="./img/footer_map-l@1x.jpg 1x, ./img/footer_map-l@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="./img/footer_map-m@1x.jpg 1x, ./img/footer_map-m@2x.jpg 2x">
+            <img class="footer__img" src="./img/footer_map-s@1x.jpg" srcset="./img/footer_map-s@2x.jpg 2x" alt="ул. Большая Конюшенная, д. 19/8, Санкт-Петербург" width="320" height="362">
+          </picture>
+        </noscript>
+      </div>
+
+    <nav class="footer-nav">
+      <div class="footer-container page__centerer">
+        <div class="footer-logo">
+          <a class="footer-logo__link" href="index.html">
+            <img class="footer-logo__image" src="./img/identics.svg#logotype" width="128" height="24" alt="Логотип Кэт-энерджи.">
+          </a>
+        </div>
+
+        <div class="social">
+          <ul class="social__list">
+            {% for link in links %}
+              <li class="social__item">
+                <a class="social__link social__link--has-icon social__link--icon_{{ link.id }}" href="{{ link.source }}" target="_blank" rel="noreferrer">
+                  <span class="page__hidden">{{ link.name }}</span>
+                </a>
+              </li>
+            {% else %}
+              <li>Социальные сети пропали 😕</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="academy">
+          <a class="academy-logo" href="https://htmlacademy.ru/intensive/adaptive" target="_blank"  rel="noreferrer">HTML Academy</a>
+        </div>
+      </div>
+    </nav>
+
+  </section>
+
+</footer>
